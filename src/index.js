@@ -18,18 +18,22 @@ orderBtn.addEventListener('click', () => {
     orderBtn.textContent = selected ? 'Zrušit' : 'Objednat'
 })
 
-// ingredience
+// seznam ingredience
 import {Layer} from './Layer/index.js'
-document.querySelector('.drink__info').innerHTML +=
-    Layer({
-        color: '#feeeca',
-        label: 'mléčná pěna'
-    })+
-    Layer({
-        color: '#fed7b0',
-        label: 'teplé mléko'
-    })+
-    Layer({
-        color: '#613916',
-        label: 'espresso'
-    });
+const layers = [
+    {
+      color: '#feeeca',
+      label: 'mléčná pěna',
+    },
+    {
+      color: '#fed7b0',
+      label: 'teplé mléko',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ];
+layers.forEach(layer => {
+    document.querySelector('.drink__info').innerHTML += Layer(layer);
+})
