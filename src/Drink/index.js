@@ -15,7 +15,7 @@ export const Drink = (props) => {
     drinkProduct.appendChild(drinkCup);
 
     const img = document.createElement('img');
-    img.src = `/assets/cups/${props.id}.png`;
+    img.src = `assets/cups/${props.id}.png`;
     drinkCup.appendChild(img);
 
     const drinkInfo = document.createElement('div');
