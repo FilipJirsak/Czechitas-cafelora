@@ -12,10 +12,10 @@ document.querySelectorAll('nav > a').forEach(navItem => navItem.addEventListener
 
 // seznam nápojů
 import { Drink } from './Drink/index.js'
-document.querySelector('.drinks-list').append(
-    Drink({
+const drinks = [
+    {
         id: 'cappuccino',
-        name: 'Capuuccino',
+        name: 'Cappuccino',
         ordered: false,
         layers: [
             {
@@ -29,10 +29,9 @@ document.querySelector('.drinks-list').append(
             {
                 color: '#613916',
                 label: 'espresso',
-            },
-        ]
-    }),
-    Drink({
+            },]
+    },
+    {
         id: 'romano',
         name: 'Romano',
         ordered: false,
@@ -45,6 +44,7 @@ document.querySelector('.drinks-list').append(
                 color: '#613916',
                 label: 'espresso',
             },
-        ]
-    }),
-);
+        ],
+    },
+];
+drinks.forEach(drink => document.querySelector('.drinks-list').append(Drink(drink)));
